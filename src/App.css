@@ -1,0 +1,268 @@
+#root {
+  width: 100%;
+  color: black;
+}
+
+body{
+  background-color: #d0f1fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img{
+  width: 100%;
+  object-fit: contain;
+}
+
+.app-container{
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container{
+  z-index: 10;
+  position: relative;
+  width: 1024px;
+  height: 768px;
+  background: linear-gradient(to top, #87cfeb, #a5e7ff);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.background-clouds{
+  position: absolute;
+  opacity: .5;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cloud-background{
+  width: 400px;
+}
+/* instructions */
+.game-instructions{
+  padding: 3rem 0;  
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.instructions-clouds{
+  position: absolute;
+  overflow: hidden;
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.instructions-clouds-item-1{
+  position: absolute;
+  top: 30px;
+  left: 140px;
+}
+
+.instructions-container{
+  height: 100%;
+  text-align: center;
+  font-size: 2rem;
+  gap:4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.instructions{
+  max-width: 800px;
+  position: relative;
+  text-align: left;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+.instructions-title{
+  margin-bottom: 1rem;
+}
+
+.start-button{
+  font-size: 2rem;
+}
+
+.start-button:hover{
+  font-size: 2rem;
+}
+
+/* Game */
+.game-details-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255);
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+@keyframes cloudFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes glow {
+  0% { box-shadow: 0 0 5px 3px rgba(255, 0, 0, 0.8); }
+  50% { box-shadow: 0 0 10px 5px rgba(255, 0, 0, 1); }
+  100% { box-shadow: 0 0 5px 3px rgba(255, 0, 0, 0.8); }
+}
+.cloud-animations {
+  animation: cloudFloat 5s ease-in-out infinite;
+}
+
+.overlay-pause{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.game-options{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+
+/* Game Over */
+.game-over-container{
+  padding: 4rem 2rem;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-over{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 500px;
+}
+input{
+  border: none;
+  color: black;
+  font-size: 16px;
+  margin-top: 16px;
+  width: 100%;
+  height: 48px;
+  padding: 4px 8px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.error{
+  color: red;
+}
+
+.title{
+  font-size: 5rem;
+}
+
+.game-over-form{
+  width: 100%;
+}
+
+.game-over .time, .game-over .stars{
+  font-weight: bold;
+  font-size: 16px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.icon{
+  width: 40px;
+  height: 40px;
+}
+
+/* High Scores */
+.high-score-container{
+  border-radius: 1rem;
+  padding: 4rem 2rem;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.high-score-table{
+  gap: 8px;
+  width: 100%;
+}
+
+.high-scores-table-container{
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.high-score-table th{
+  padding: 1rem;
+  margin-bottom: 2px;
+}
+
+.high-score-table tbody{
+  padding: 1rem;
+  margin-bottom: 2px;
+}
+
+.high-score-container button{
+  margin-top: 8px;
+  width: 100%;
+}
